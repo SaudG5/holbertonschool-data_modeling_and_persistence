@@ -1,2 +1,4 @@
 SELECT title, price FROM books
-ORDER BY price;
+WHERE stock > 0
+ORDER BY price
+LIMIT 4; 
