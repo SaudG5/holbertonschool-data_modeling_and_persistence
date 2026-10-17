@@ -1,0 +1,8 @@
+SELECT instructors.name AS instructor_name
+FROM instructors
+WHERE instructors.id IN (
+    SELECT courses.instructor_id
+    FROM courses
+    INNER JOIN registrations ON registrations.course_id = courses.id
+)
+ORDER BY instructors.name, instructors.id;
